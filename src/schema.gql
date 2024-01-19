@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ActionResponse {
+  """Error Message"""
+  message: Boolean
+
+  """Is Success"""
+  success: Boolean!
+}
+
+type Mutation {
+  signIn(input: SignInInput!): SignInData!
+  signUp(input: SignUpInput!): ActionResponse!
+}
+
+type Query {
+  getHello: String!
+  getProfile: User!
+}
+
+type SignInData {
+  """Jwt Token for authentication"""
+  token: String!
+}
+
+input SignInInput {
+  name: String!
+  password: String!
+}
+
+input SignUpInput {
+  email: String!
+  name: String!
+  password: String!
+}
+
+type User {
+  name: String!
+}
